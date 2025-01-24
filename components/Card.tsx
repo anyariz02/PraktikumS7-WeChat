@@ -10,7 +10,7 @@ type Props = {
   waktu: string;
 };
 
-const PlaceHolderImage = require('@/assets/images/KKSCENE_062939.png');
+const PlaceHolderImage = require('@/assets/images/naruto.jpg');
 
 export default function Card({ id, sumberGambar, judul, keterangan, waktu }: Props) {
   const imageSoure = sumberGambar ? { uri: sumberGambar } : PlaceHolderImage;
@@ -20,15 +20,9 @@ export default function Card({ id, sumberGambar, judul, keterangan, waktu }: Pro
     
     <View style={styles.panel}>
       <View style={styles.row}>
-      <Pressable onPress={() =>
-            router.push({
-              pathname: "/details/[id]",
-              params: { id: id}
-            })
-        }>
+        
         <Image style={styles.image} source={imageSoure} />
         
-    </Pressable>
         <View style={styles.textContainer}>
           <View style={styles.rowTitleTime}>
             <Text style={styles.text}>{judul}</Text>
